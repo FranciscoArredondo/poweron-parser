@@ -21,7 +21,6 @@
     "dev": "tsdx watch --onSuccess \"npm run cli\"",
     "cli": "node dist/index.js"
   },
-  "peerDependencies": {},
   "husky": {
     "hooks": {
       "pre-commit": "tsdx lint"
@@ -53,5 +52,8 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^3.9.7"
+  },
+  "dependencies": {
+    "chevrotain": "^7.0.3"
   }
 }
