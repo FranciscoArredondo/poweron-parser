@@ -23,14 +23,14 @@ export const BuiltInFunction = createToken({
   longer_alt: Identifier,
 });
 
-const Keyword = createToken({
+export const Keyword = createToken({
   name: 'Keyword',
   pattern: /ACROSS|AFTERLAST|ALL|APPEND|BEFOREFIRST|BELL|BLINK|BLOCKSIZE|BRIGHT|CALL|CHANGE|CLEARSERVICE|CLEARWARNING|CREATE|DATAFILE|DELETE|DIALOGCLOSE|DIALOGDISPLAY|DIALOGENDGROUPBOX|DIALOGENDGROUPING|DIALOGINTROTEXT|DIALOGNEWCOLUMN|DIALOGPROMPTCOMBOEND|DIALOGPROMPTLISTEND|DIALOGSTARTGROUPING|DIALOGTEXTLISTEND|DIVPROJECTCALC|ENTERDELIMITER|ENTERLINE|EVERY|FOR ACCOUNT|FORMLENGTH|#INCLUDE|LABELS|LASTACCOUNT|LASTCREATE|LASTSEQUENCE|LEFT|LNInsFromSh|LOANPROJECTCALC|LOC|MICRACCOUNTNUMBER|MODIFY|NEWLINE|NEWPAGE|NEXTULI|NONANSISTANDARD|NONE|OVERDRAWAVAILABLECALC|OVERDRAWAVAILABLEINIT|PREFIX|PRINTCONTROL|PROCEDURE|READ|READWRITE|RECORDSIZE|REPORTCATEGORY|REVISE|RIGHT|SAVEMODE|SET|SETSERVICE|SETWARNING|STARTING|SUBTOTAL|SUPPRESS|TARGETFILE|TERMINATE|TITLE|UNTIL|VIN|WINMESSAGESEND|WINMODETEXT|WINMODEWINDOWS|WRAP|WRITEAND|ANY|ASCII|EBCDIC|END|FOR|DO|END|IF|THEN|ELSE|LANDSCAPE|NOT|OR|PORTRAIT|REVLANDSCAPE|REVPORTRAIT|UNIQUEKEY|WHILE/i,
   longer_alt: Identifier,
 });
 
-const RecordType = createToken({
-  name: 'Record Type',
+export const RecordType = createToken({
+  name: 'RecordType',
   pattern: /ACCESS|ACCOUNT|ACHADDENDA|ACHADDINFO|ACHEDIT|ACHITEM|ACTIVITY|AGREEMENT|AGREEMENT TRANSACTION|ATMDIALOG|BATCHACHORIG|CARD|CASHLETTER|CASHORDER|CDMDIALOG|CHECK|CHECKORDER|COLLATERAL|COLLATERAL COLLHOLD|COLLATERAL DOCUMENT|COMMENT|CORPTRANSFER|CPWORKCARD|CREDREP|CREDREP ITEM|CTR|CTRACCOUNT|CTRBRANCH|CTRFOREIGN|CTRPERSON|CTRPERSON CTRTRANINFO|DEALER|EFT|BILL|PAYROLL|EFT|ADDENDAINFO|ESCROW|ESCROWANALYSIS|EXCPADDENDA|EXCPADDINFO|EXCPITEM|EXTERNALACCOUNT|EXTERNALLOAN|FMHISTORY|GLACCOUNT|GLENTRY|GLHISTORY|GLSUBACCOUNT|GLTRAN|HOLD|HOUSEHOLD|INVENTORY|INVOICE|IRS|IRA|IRS DISTRIBUTION|LOAN BANKRUPTCY PREPETITIONBAL|LNSEGMENT|LOAN BANKRUPTCY|LOAN|LOANAPP|LOANAPP FINANCE|LOANAPP PERSON|LOOKUP|MBRADDRESS|MEMBERREC|NAME|NONACCTNAME|NOTE|OFACDETAILS|PARTICIPANT|PARTICIPANT TRANSACTION|PARTICIPATION|POOL|PARTICIPATIONLOAN|POOLLOAN|PAYEE|PLEDGE|PORTFOLIO|PREFERENCE|RECEIVEDITEM|REMITTANCE|RESERVEPLAN|RESERVEPLAN LOAN|RESERVEPLAN TRANSACTION|SCHEDULE|SHARE ANALYSIS|SHARE ANALYSISGROUP|SHARE ANALYSISPLAN|SHARE|SAVINGS|SITE|SITE CASHORDERTYPE|TRACKING|TRANSACTION|TRANSFER|USER|VENDOR|WESTERNUNION|WIRE|WIRE BENEFICIARYADV|WIRE BENEFICIARYFIADV|WIRE BENEFICIARYFIINFO|WIRE BENEFICIARYINFO|WIRE DRAWDOWNDEBITACCTADV|WIRE FITOFIINFO|WIRE INTERMEDFIADV|WIRE INTERMEDFIINFO|WIRE RECEIVERFIINFO|WIRE SERVICEMESSAGE|WIRE USCAUDITINFO|WORKLISTEDIT|WORKLISTEDIT|WORKLISTFIELD/i,
 });
 
@@ -50,23 +50,26 @@ export const WhiteSpace = createToken({
   group: Lexer.SKIPPED,
 });
 
-const Null = createToken({ name: 'Null', pattern: /null/i });
-const LCurly = createToken({ name: 'LCurly', pattern: /{/ });
-const RCurly = createToken({ name: 'RCurly', pattern: /}/ });
-const LParen = createToken({ name: 'LParen', pattern: /\(/ });
-const RParen = createToken({ name: 'RParen', pattern: /\)/ });
-const LSquare = createToken({ name: 'LSquare', pattern: /\[/ });
-const RSquare = createToken({ name: 'RSquare', pattern: /\]/ });
-const LArrow = createToken({ name: 'LArrow', pattern: /</ });
-const RArrow = createToken({ name: 'RArrow', pattern: />/ });
-const Comma = createToken({ name: 'Comma', pattern: /,/ });
-const Colon = createToken({ name: 'Colon', pattern: /:/ });
-const Equal = createToken({ name: 'Equal', pattern: /=/ });
-const Period = createToken({ name: 'Period', pattern: /\./ });
-const AtSymbol = createToken({ name: 'AtSymbol', pattern: /@/ });
-const Operation = createToken({ name: 'Operation', pattern: /[\+\-\*\/]+/ });
-const SingleQuote = createToken({ name: 'SingleQuote', pattern: /'/ });
-const Hashtag = createToken({ name: 'HashTag', pattern: /#/ });
+export const Null = createToken({ name: 'Null', pattern: /null/i });
+export const LCurly = createToken({ name: 'LCurly', pattern: /{/ });
+export const RCurly = createToken({ name: 'RCurly', pattern: /}/ });
+export const LParen = createToken({ name: 'LParen', pattern: /\(/ });
+export const RParen = createToken({ name: 'RParen', pattern: /\)/ });
+export const LSquare = createToken({ name: 'LSquare', pattern: /\[/ });
+export const RSquare = createToken({ name: 'RSquare', pattern: /\]/ });
+export const LArrow = createToken({ name: 'LArrow', pattern: /</ });
+export const RArrow = createToken({ name: 'RArrow', pattern: />/ });
+export const Comma = createToken({ name: 'Comma', pattern: /,/ });
+export const Colon = createToken({ name: 'Colon', pattern: /:/ });
+export const Equal = createToken({ name: 'Equal', pattern: /=/ });
+export const Period = createToken({ name: 'Period', pattern: /\./ });
+export const AtSymbol = createToken({ name: 'AtSymbol', pattern: /@/ });
+export const Operation = createToken({
+  name: 'Operation',
+  pattern: /[\+\-\*\/]+/,
+});
+export const SingleQuote = createToken({ name: 'SingleQuote', pattern: /'/ });
+export const Hashtag = createToken({ name: 'HashTag', pattern: /#/ });
 
 export default [
   WhiteSpace, // NOTE: we are placing WhiteSpace first as it is very common thus it will speed up the lexer.
